@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="個人制作">
+<link rel="icon" href="../favicon.ico">
+<title>VIGILO - Contact</title>
+<!-- css -->
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/common_sp.css" media="(max-width: 700px)">
+<link rel="stylesheet" href="../css/contact.css">
+</head>
+<!-- js -->
+<script src="../js/common.js"></script>
+<script src="../js/contact.js"></script>
+<body id="contact">
+	<header>
+		<h1><a href="../index.html"><img src="../logo.png" alt="VIGILO" width="200" height="30"></a></h1>
+		<nav>
+			<input type="checkbox" id="menu">
+			<label for="menu"><span></span></label>
+			<ul>
+				<li class="menu1"><a href="../index.html"><span>Home</span></a></li>
+				<li class="menu2"><a href="../about/index.html"><span>About</span></a></li>
+				<li class="menu3"><a href="../facility/index.html"><span>Facility</span></a></li>
+				<li class="menu4"><a href="../sauna/index.html"><span>Sauna</span></a></li>
+				<li class="menu5"><a href="index.html"><span>Contact</span></a></li>
+			</ul>
+		</nav>
+	</header>
+	<hr>
+	<main>
+		<div class="mv">
+			<p><img src="../images/contact/contact_mv02.jpg" alt="" width="1440" height="600" ></p>
+		</div><!-- /.mv -->
+		<div class="wrapper">
+			<div class="contents fade-in">
+				<h2>― Contact ―</h2>
+				<div class="contact-form">
+					<a href="#faq-section">よくあるご質問はこちら</a>
+					<form id="contactForm" action="../contact2/index.html" method="post" class="luxury-form minimal-style">
+						<div class="form-group">
+							<label for="name">氏名 <span class="required-mark">（必須）</span></label>
+							<input type="text" id="name" name="name" placeholder="FULL NAME" required>
+						</div>
+						<div class="form-group">
+							<label for="email">メールアドレス <span class="required-mark">（必須）</span></label>
+							<input type="email" id="email" name="email" placeholder="E-MAIL ADDRESS" required>
+						</div>
+						<div class="form-group">
+							<label for="tel">電話番号 <span class="required-mark">（任意）</span></label>
+							<input type="tel" id="tel" name="tel" placeholder="PHONE NUMBER" pattern="\d{2,4}-?\d{2,4}-?\d{3,4}">
+						</div>
+						<div class="form-group select-box">
+							<label for="topic">お問い合わせ内容 <span class="required-mark">（必須）</span></label>
+							<div class="select-wrapper">
+								<select id="topic" name="topic" required>
+									<option value="" disabled selected>内容を選択してください</option>
+									<option value="trial">体験・見学希望</option>
+									<option value="membership">入会手続きについて</option>
+									<option value="facility">施設・設備について</option>
+									<option value="other">その他</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="message">メッセージ（ご質問・ご要望の詳細） <span class="required-mark">（必須）</span></label>
+							<textarea id="message" name="message" rows="5" placeholder="MESSAGE" required></textarea>
+						</div>
+						<div class="form-check">
+							<label for="privacy">プライバシーポリシーに同意します。 <span class="required-mark">（必須）</span></label>
+							<input type="checkbox" id="privacy" name="privacy" required>
+						</div>
+						<button type="submit" class="submit-button">SEND INQUIRY</button>
+					</form>
+				</div>
+			</div><!-- /.contents -->
+			<div class="faq fade-in">
+				<div class="faq" id="faq-section"> 
+				<h2>― Faq ―</h2>
+					<div class="accordion-container">
+						<div class="accordion-item">
+							<button class="accordion-question" aria-expanded="false">
+								入会には何が必要ですか？
+								<span class="icon"></span>
+							</button>
+							<div class="accordion-answer">
+								<p>ご入会手続きには、身分証明書（運転免許証、健康保険証など）、クレジットカード情報、および初期費用が必要です。詳細はお問い合わせ内容を選択してご確認ください。</p>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<button class="accordion-question" aria-expanded="false">
+								見学や体験は可能ですか？
+								<span class="icon"></span>
+							</button>
+							<div class="accordion-answer">
+								<p>はい、事前にご予約いただければ可能です。お問い合わせフォームより「体験・見学希望」を選択してご連絡ください。専属コンシェルジュが施設をご案内いたします。</p>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<button class="accordion-question" aria-expanded="false">
+								営業時間を教えてください。
+								<span class="icon"></span>
+							</button>
+							<div class="accordion-answer">
+								<p>当施設は24時間年中無休でご利用いただけます。ただし、コンシェルジュデスクの受付時間は平日10:00～20:00、土日祝日10:00～18:00となっております。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!-- /.faq -->
+		</div><!-- /.wrapper -->
+	</main>
+	<hr>
+	<footer>
+		<div id="footerLogo">
+			<a href="../index.html"><img src="../logo.png" alt="VIGILO" width="200" height="30"></a>
+		</div>
+		<ul>
+			<li class="menu1"><a href="../index.html">Home</a></li>
+			<li class="menu2"><a href="../about/index.html">About</a></li>
+			<li class="menu3"><a href="../facility/index.html">Facility</a></li>
+			<li class="menu4"><a href="../sauna/index.html">Sauna</a></li>
+			<li class="menu5"><a href="index.html">Contact</a></li>
+		</ul>
+		<p><small>Copyright &copy; 2025 VIGILO</small></p>
+	</footer>
+	<div id="errorModal" class="modal-overlay">
+		<div class="modal-content">
+			<h3 id="modalTitle"></h3>
+			<p id="modalMessage"></p>
+			<button class="modal-close-button" onclick="closeModal()">閉じる</button>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,219 @@
+@charset "utf-8";
+/* body
+---------------------------------------------------*/
+html {
+	overflow-y: scroll;
+}
+body {
+	line-height: 1.5;
+}
+a {
+	text-decoration: none;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+/* header
+---------------------------------------------------*/
+header {
+	background-color: rgba(0,0,0,0.9);
+	position: sticky;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	min-height: 70px;
+}
+h1 {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	padding-left: 30px;
+}
+/* nav
+---------------------------------------------------*/
+nav ul {
+	display: flex;
+	justify-content: right;
+	padding-top: 35px;
+	gap: 40px;
+	padding-right: 50px;
+}
+nav li a {
+	color: #fff;
+}
+nav li a span {
+	position: relative;
+	display: inline-block;
+}
+nav li a span::after {
+position: absolute;
+left: 0;
+content: '';
+width: 100%;
+height: 1px;
+background: #fff;
+bottom: -1px;
+transform: scale(0, 1);
+transform-origin: right top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の右端*/
+transition: transform 0.3s;  /*変形の時間*/
+}
+nav li a:hover span::after {
+transform: scale(1, 1);     /*ホバー後、x軸方向に1（相対値）伸長*/
+transform-origin: left top; /*左から右に向かう*/
+}
+nav label,
+input[type="checkbox"] {
+	display: none;
+}
+/* current */
+#home nav .menu1 a span,
+#about nav .menu2 a span,
+#facility nav .menu3 a span,
+#sauna nav .menu4 a span,
+#contact nav .menu5 a span {
+	text-decoration: underline;
+}
+/* current時アニメーション非表示 */
+#home nav .menu1 a span::after,
+#about nav .menu2 a span::after,
+#facility nav .menu3 a span::after,
+#sauna nav .menu4 a span::after,
+#contact nav .menu5 a span::after {
+	display: none;
+}
+/* main
+---------------------------------------------------*/
+main {
+	margin-bottom: 60px;
+}
+.mv {
+	margin: 0 auto;
+	max-width: 1440px;
+}
+.wrapper {
+	align-items: center;
+	max-width: 1440px;
+	margin: 0 auto;
+	width: 100%;
+}
+h2,
+h3,
+h4,
+.contents,
+.banners,
+.map {
+	text-align: center;
+}
+h2 {
+	font-size: 1.5rem;
+}
+
+h3 a {
+	color: black;
+	position: relative;
+	display: inline-block;
+	font-size: 1.3rem;
+	margin-bottom: 40px;
+}
+h3 a::after {
+	position: absolute;
+	left: 0;
+	content: '';
+	width: 100%;
+	height: 1px;
+	background: #000000;
+	bottom: -1px;
+	transform: scale(0, 1);
+	transform-origin: right top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の右端*/
+	transition: transform 0.3s;  /*変形の時間*/
+}
+h3 a:hover::after {
+	transform: scale(1, 1);     /*ホバー後、x軸方向に1（相対値）伸長*/
+	transform-origin: left top; /*左から右に向かう*/
+}
+
+h4 {
+	padding-bottom: 1.5em;
+}
+.container {
+	margin: 0 auto;
+	max-width: 500px;/*ここの幅確認*/
+	padding-bottom: 60px;
+}
+.contents {
+	margin: 40px 0;
+}
+.contents p {
+	margin: 50px 0;
+}
+/* footer
+---------------------------------------------------*/
+footer {
+	background-color: rgba(0,0,0,0.9);
+	padding: 40px 40px 20px 40px;
+	text-align: center;
+}
+footer ul {
+	display: flex;
+	padding: 40px 20px 10px 20px;
+	justify-content: center;
+	gap: 3rem;
+}
+footer li {
+	gap: 2rem;
+}
+footer li a,
+footer p {
+	color: #fff;
+}
+footer li a {
+	position: relative;
+	display: inline-block;
+}
+footer li a::after {
+position: absolute;
+left: 0;
+content: '';
+width: 100%;
+height: 1px;
+background: #fff;
+bottom: -1px;
+transform: scale(0, 1);
+transform-origin: right top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の右端*/
+transition: transform 0.3s;  /*変形の時間*/
+}
+footer li a:hover::after {
+transform: scale(1, 1);     /*ホバー後、x軸方向に1（相対値）伸長*/
+transform-origin: left top; /*左から右に向かう*/
+}
+/* current */
+#home footer .menu1 a,
+#about footer .menu2 a,
+#facility footer .menu3 a,
+#sauna footer .menu4 a,
+#contact footer .menu5 a {
+	text-decoration: underline;
+}
+/* current時アニメーション非表示 */
+#home footer .menu1 a::after,
+#about footer .menu2 a::after,
+#facility footer .menu3 a::after,
+#sauna footer .menu4 a::after,
+#contact footer .menu5 a::after {
+	display: none;
+}
+/* js
+---------------------------------------------------*/
+
+/* ▼ 全要素共通：ふんわりスクロールフェード用 */
+.fade-in {
+  opacity: 0;
+  transform: translateY(10%);
+  transition: opacity 1.0s ease, transform 1.0s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}

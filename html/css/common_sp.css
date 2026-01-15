@@ -1,0 +1,99 @@
+@charset "utf-8";
+/* body
+---------------------------------------------------*/
+body {
+	font-size: 0.875em;
+}
+/* header
+---------------------------------------------------*/
+/* nav
+---------------------------------------------------*/
+label[for="menu"] {
+	display: block;
+	position: fixed;
+	z-index: 5;
+	padding: 0;
+}
+label[for="menu"] {
+	display: block;
+	width: 30px;
+	height: 22px;
+	position: fixed;
+	top: 20px;
+	right: 10px;
+	cursor: pointer;
+	z-index: 5;
+}
+/* 三本線のバー */
+label[for="menu"]::before,
+label[for="menu"]::after,
+label[for="menu"] span {
+	content: "";
+	display: block;
+	height: 2px;
+	background-color: rgba(255,255,255,0.9); /* 線の色 */
+	margin: 5px 0;
+	border-radius: 2px;
+	transition: all 0.3s ease;
+}
+ /* 真ん中のバー */
+label[for="menu"] span {
+	width: 80%;
+}
+/* 上下のバー */
+label[for="menu"]::before,
+label[for="menu"]::after {
+	width: 80%;
+}
+/* チェック時のアニメーション（X型に変形） */
+#menu:checked + label[for="menu"]::before {
+	transform: translateY(7px) rotate(45deg);
+}
+#menu:checked + label[for="menu"]::after {
+	transform: translateY(-7px) rotate(-45deg);
+}
+#menu:checked + label[for="menu"] span {
+opacity: 0;
+}
+nav ul {
+	background-color: rgba(0,0,0,0.9);
+	justify-content: right;
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 1;
+	display: none;
+	width: 120px;/* 幅を指定(お好みで調整) */
+	height: 400px;
+	padding-top: 60px;/* ハンバーガーメニューにかぶらないよう余白を追加 */
+}
+nav ul li a {
+	padding-top: 1em;
+	align-items: center;
+}
+#menu:checked ~ ul {
+	display: grid;
+}
+h1 {
+	width: 150px;
+}
+h2 {
+	font-size: 1.2rem;
+	margin-top: 2rem;
+}
+.contents {
+	margin: 0 40px 0 40px;
+}
+footer {
+	padding: 20px 40px 20px 40px;
+}
+#footerLogo {
+	width: 150px;
+	margin: 10px auto 0px auto;
+}
+footer ul {
+	display: flex;
+	padding: 40px 20px 10px 20px;
+	justify-content: center;
+	gap: 1rem;
+}

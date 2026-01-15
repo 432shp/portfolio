@@ -1,0 +1,194 @@
+@charset "utf-8";
+
+        /* 背景画像固定セクション */
+        .parallax-section,
+        .parallax-section2,
+        .parallax-section3,
+        .parallax-section4,
+        .parallax-section5,
+        .parallax-section6,
+        .parallax-section7{
+            position: relative;
+            height: 600px;
+            background-image: url(../images/sauna/sauna1.jpg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* 重要: 背景を固定 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .parallax-section2 {
+            background-image: url(../images/sauna/images/sauna2_01.jpg);
+        }
+        .parallax-section3 {
+            background-image: url(../images/sauna/sauna3.jpg);
+        }
+        .parallax-section4 {
+            background-image: url(../images/sauna/sauna4.jpg);
+        }
+        .parallax-section5 {
+            background-image: url(../images/sauna/sauna5.jpg);
+        }
+        .parallax-section6 {
+            background-image: url(../images/sauna/sauna9.jpg);
+        }
+        .parallax-section7 {
+            background-image: url(../images/sauna/sauna8.jpg);
+        }
+        /* オーバーレイ（背景を少し暗くする） */
+        .parallax-section::before,
+        .parallax-section2::before,
+        .parallax-section3::before,
+        .parallax-section4::before,
+        .parallax-section5::before,
+        .parallax-section6::before,
+        .parallax-section7::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+         .parallax-section2::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        /* テキストコンテンツ */
+        .pc {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .pc h3 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            letter-spacing: 0.1em;
+        }
+
+        .pc p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+/* 通常のコンテンツセクション */
+        .content-section {
+            background: white;
+            padding: 80px 20px;
+            position: relative;
+            z-index: 2; /* 背景画像の上に表示 */
+        }
+
+
+        .content-wrapper p {
+            max-width: 1330px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .content-section h3 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            letter-spacing: 0.05em;
+        }
+
+        .content-section p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+/* セクション全体 */
+.saunaArea .sc {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 背景画像の枠（固定で切替）*/
+.sImg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: opacity 1s ease;
+}
+
+/* テキストボックス */
+.saunaArea .sc .st {
+  position: absolute;
+  top: 50%;
+  right: 60%;
+  transform: translateY(-50%) translateX(50px);
+  width: 35%;
+  background: rgba(0,0,0,0.8);
+  padding: 40px;
+  box-sizing: border-box;
+  z-index: 10;
+  color: #fff;
+
+  /* 初期状態（非表示） */
+  opacity: 0;
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+/* 初期状態：左へ 50px ずらす */
+.saunaArea .sc .st {
+  opacity: 0;
+  transform: translateY(-50%) translateX(-50px);  /* ← マイナスで左へ */
+  transition: opacity 1.5s ease, transform 1s ease;
+}
+
+/* 表示時：元の位置に戻る */
+.saunaArea .sc .st.visible {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+/* footer への干渉を防ぐ */
+footer {
+  position: relative;
+  z-index: 100;
+}
+
+@media (max-width: 700px) {
+    /* パララックス背景のぼけ防止（固定を解除） */
+    .parallax-section,
+    .parallax-section2,
+    .parallax-section3,
+    .parallax-section4,
+    .parallax-section5,
+    .parallax-section6,
+    .parallax-section7 {
+        background-attachment: scroll; /* ←重要：fixedを無効化 */
+        background-size: cover;        /* SPでも綺麗に表示 */
+        background-position: center;
+        height: 350px;                 /* SP向けに高さ調整（任意） */
+    }
+    /* テキストが画面に収まるよう調整 */
+    .pc h3 {
+        font-size: 1.2rem;
+    }
+    .pc p {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+    .content-section h3 {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        text-align: center;
+        letter-spacing: 0.05em;
+    }
+}

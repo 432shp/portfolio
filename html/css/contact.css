@@ -1,0 +1,183 @@
+@charset "utf-8";
+/* main
+---------------------------------------------------*/
+
+/* --- フォーム --- */
+.contact-form a {
+    color: #333;
+}
+.contact-form a:hover {
+    color: #333;
+    border-bottom:#333 solid 1px;
+}
+.contact-form { max-width: 700px; margin: 40px auto; padding: 0 20px; }
+.contact-form .form-title {
+    font-size: 1.8rem; font-weight: 300; letter-spacing: 0.1em; text-align: center; margin-bottom: 5px;
+    color: #333;
+}
+.contact-form {
+    text-align: center; margin-bottom: 40px; color: #666;
+    border-bottom: 1px solid #eee; padding-bottom: 20px;
+}
+.contact-form .form-group { margin-bottom: 25px; }
+.form-group { margin-top: 50px; }
+.contact-form label {
+    display: block; font-size: 0.8rem; color: #555; margin-bottom: 8px;
+    text-align: left; font-weight: 600; letter-spacing: 0.05em;
+}
+/* select の矢印用ラッパー */
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper select {
+    width: 100%;
+    padding-right: 30px; /* 矢印分のスペース */
+}
+
+/* 矢印 */
+.select-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #333;
+    pointer-events: none;
+}
+.required-mark { color: #a00; font-weight: normal; margin-left: 5px; }
+
+.contact-form input:not([type="checkbox"]),
+.contact-form textarea,
+.contact-form select {
+    width: 100%; padding: 15px 0 10px 0; border: none; border-bottom: 1px solid #333;
+    background-color: transparent; color: #333; 
+    box-sizing: border-box; transition: border-bottom-color 0.3s;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder { color: #999; opacity: 1; }
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus { outline: none; border-bottom: 2px solid #000; }
+
+.contact-form select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    width: 100%;
+    padding: 15px 30px 10px 0; /* 右側に矢印スペース */
+    border: none;
+    border-bottom: 1px solid #333;
+    background-color: transparent;
+    color: #333;
+
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative; /* 疑似要素用 */
+}
+
+/* 疑似要素で三角矢印を表示 */
+.contact-form select::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 10px; /* 右端のスペース */
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #333; /* 矢印の色 */
+    pointer-events: none; /* select 操作の妨げにしない */
+}
+
+.contact-form .form-check {
+    margin-top: 30px; text-align: center; font-size: 0.8rem; color: #666;
+}
+.contact-form .form-check input[type="checkbox"] { display: flex; width: auto; margin: 0 auto 5px auto; }
+
+.contact-form .submit-button {
+    display: inline-block; width: 300px; padding: 18px 20px; margin: 30px auto ;
+    background-color: rgba(0,0,0,0.9); color: #fff; border: 1px solid #000;
+    letter-spacing: 0.15em; cursor: pointer;
+    font-weight: bold; text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+.contact-form .submit-button:hover { background-color: #fff; color: #000; }
+
+/* --- モーダル --- */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.7); display: none;
+    justify-content: center; align-items: center; z-index: 1000; opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.modal-overlay.active { display: flex; opacity: 1; }
+.modal-content {
+    background-color: #fff; padding: 30px; border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    max-width: 400px; width: 90%; text-align: center;
+    transform: translateY(-20px); transition: transform 0.3s ease;
+}
+.modal-overlay.active .modal-content { transform: translateY(0); }
+.modal-content h3 { font-size: 1.25rem; margin-top: 0; margin-bottom: 15px; color: #000; font-weight: 500; letter-spacing: 0.05em; }
+.modal-content p { margin-bottom: 25px; color: #666; font-size: 0.95rem; }
+.modal-close-button {
+    background-color: #000; color: #fff; border: none; padding: 10px 20px;
+    cursor: pointer; font-size: 1rem; font-weight: bold; letter-spacing: 0.1em;
+    transition: background-color 0.3s;
+}
+.modal-close-button:hover { background-color: #333; }
+
+/* --- FAQリンク --- */
+.faq-link-area {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.faq-link-area a {
+    color: #000;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    padding-bottom: 2px;
+    transition: opacity 0.3s;
+}
+.faq-link-area a:hover { opacity: 0.7; }
+/* --- FAQ/Accordion --- */
+.faq { max-width: 800px; margin: 40px auto 80px auto; padding: 0 20px; scroll-margin-top: 20px; }
+.faq > p { text-align:center; line-height:1.6; color:#555; margin-bottom:40px; }
+.accordion-container { margin-top:40px; }
+.accordion-item { border-top:1px solid #eee; }
+.accordion-item:last-child { border-bottom:1px solid #eee; }
+.accordion-question {
+    background:none; border:none; width:100%; text-align:left; padding:18px 0;
+     color:#333; font-weight:500; cursor:pointer;
+    display:flex; justify-content:space-between; align-items:center; transition:background-color 0.3s;
+	font-family: inherit;
+}
+.accordion-question:hover { background-color:#f9f9f9; }
+.accordion-question .icon {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #333; /* 矢印の色 */
+    margin-left: 10px;
+    display: inline-block;
+}
+.accordion-question[aria-expanded="true"] .icon { transform:rotate(-180deg); }
+.accordion-answer { max-height:0; overflow:hidden; transition:max-height 0.5s ease-out; padding:0 18px; }
+.accordion-answer.open { max-height:1000px; transition:max-height 0.4s ease-in; }
+.accordion-answer p { padding:0 0 20px 0; margin:0; color:#666; text-align:left; }
+
+@media (max-width: 700px) {
+    .contact-form .submit-button {
+    width: 200px;
+    }
+}

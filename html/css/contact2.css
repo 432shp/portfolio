@@ -1,0 +1,50 @@
+/* --- Thank You Page --- */
+.thank-you-message {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 40px;
+    text-align: center;
+    border: 1px solid #eee; /* シンプルな枠線 */
+    background-color: #f9f9f9; /* わずかに背景色を付ける */
+}
+
+.thank-you-message h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 25px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+.thank-you-message p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.thank-you-message .action-links {
+    margin-top: 40px;
+}
+
+.back-home-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #333; /* フォームの送信ボタンに合わせたトーン */
+    color: #fff;
+    border: 1px solid #333;
+    text-decoration: none;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.back-home-button:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+/* ページ全体への影響を避けるため、contact.htmlで使用したmvを非表示にする（Thank Youページにmvは不要な想定） */
+#contact-thanks .mv {
+    display: none;
+}

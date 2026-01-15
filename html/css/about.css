@@ -1,0 +1,70 @@
+@charset "utf-8";
+/* main
+---------------------------------------------------*/
+h4 {
+  color: #fff;
+  font-size: 1.5rem;
+}
+h5 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.introduction {
+    position: relative;
+    padding: 60px 0;
+    background-image: url('../images/about/about2.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.85;
+}
+.ic {
+  padding: 0 30px;
+  margin: 0 auto;
+  max-width: 1320px;
+  display: flex;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+.num {
+  flex-shrink: 0; /* 番号が縮まないように */
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+.iText {
+    flex: 1;
+    min-width: 300px; /* 細長くならないようにする */
+    max-width: 400px; /* 読みやすい幅をキープ（任意） */
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.45); /* 半透明の白背景 */
+    backdrop-filter: blur(10px); /* ぼかし効果（モダンなデザイン） */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+/* 初期状態：非表示＆少し下にずらす */
+.iText {
+    opacity: 0;
+    transform: translateY(-40px); /* 上から落ちてくるように */
+    transition: opacity 2.0s ease, transform 2.0s ease; /* ゆっくり */
+}
+
+.iText.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 1200px) {
+	.ic {
+		display: block;
+    text-align: center;
+    padding: 0 20px;
+    gap: 0;
+	}
+  .iText {
+    margin: 20px auto;       /* 自動で中央寄せ（上下20px） */
+    text-align: left;        /* ボックス内のテキストは左寄せ */
+    padding: 10px;
+  }
+}
+  

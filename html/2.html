@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURORA: モダンシック・ジュエリー</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN for sleek icons -->
+    <script type="module" src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Inter font for a clean, modern look */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0d0d; /* Dark background */
+            color: #e5e5e5; /* Light text */
+        }
+        .text-gold {
+            color: #d4af37; /* Gold accent color */
+        }
+        .border-gold {
+            border-color: #d4af37;
+        }
+        /* Custom CSS for Banner-like effect (Day 5 Task) */
+        .promo-banner {
+            background: linear-gradient(135deg, #1f2937 0%, #0d0d0d 100%);
+        }
+        /* Sleek Button Hover Effect */
+        .btn-sleek {
+            transition: all 0.3s ease;
+            box-shadow: 0 0 0 0 #d4af37;
+        }
+        .btn-sleek:hover {
+            box-shadow: 0 0 10px 1px #d4af37;
+            background-color: #d4af37;
+            color: #0d0d0d;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-black/80 backdrop-blur-sm shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo: Simple Text/Font-based -->
+            <a href="#" class="text-3xl font-extrabold text-gold tracking-widest uppercase">AURORA</a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#" class="hover:text-gold transition duration-200">コレクション</a>
+                <a href="#" class="hover:text-gold transition duration-200">コンセプト</a>
+                <a href="#" class="hover:text-gold transition duration-200">ストア</a>
+                <a href="#" class="hover:text-gold transition duration-200">ニュース</a>
+                <a href="#" class="hover:text-gold transition duration-200">採用情報</a>
+                <a href="#" class="hover:text-gold transition duration-200">お問い合わせ</a>
+            </nav>
+
+            <!-- Icons/Mobile Menu Trigger -->
+            <div class="flex items-center space-x-4">
+                <i data-lucide="user" class="w-6 h-6 hover:text-gold cursor-pointer"></i>
+                <i data-lucide="shopping-bag" class="w-6 h-6 hover:text-gold cursor-pointer"></i>
+                <button id="mobile-menu-button" class="md:hidden">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay (Hidden by default) -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black/95 z-40 hidden md:hidden transition-opacity duration-300">
+        <div class="flex flex-col items-center justify-center h-full space-y-8 text-xl font-bold">
+            <a href="#" class="text-white hover:text-gold transition duration-200" onclick="closeMobileMenu()">コレクション</a>
+            <a href="#" class="text-white hover:text-gold transition duration-200" onclick="closeMobileMenu()">コンセプト</a>
+            <a href="#" class="text-white hover:text-gold transition duration-200" onclick="closeMobileMenu()">ストア</a>
+            <a href="#" class="text-white hover:text-gold transition duration-200" onclick="closeMobileMenu()">ニュース</a>
+            <a href="#" class="text-white hover:text-gold transition duration-200" onclick="closeMobileMenu()">採用情報</a>
+            <a href="#" class="text-white hover:text-gold transition duration-200" onclick="closeMobileMenu()">お問い合わせ</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-screen flex items-center justify-center overflow-hidden">
+            <!-- Background Placeholder Image (Replace with actual high-res photo) -->
+            <div class="absolute inset-0">
+                <img src="https://placehold.co/1920x1080/000000/d4af37?text=Jewelry+Model+Photo" 
+                     onerror="this.src='https://placehold.co/1920x1080/000000/d4af37?text=Jewelry+Model+Photo';"
+                     alt="モダンなジュエリーを身に着けたモデル" 
+                     class="w-full h-full object-cover opacity-70 transition-transform duration-1000 ease-out hover:scale-105">
+            </div>
+            
+            <div class="relative z-10 text-center p-8 bg-black/50 rounded-xl max-w-2xl mx-auto shadow-2xl">
+                <h1 class="text-5xl md:text-7xl font-light tracking-tight text-white mb-4">
+                    Minimalist <span class="text-gold font-serif italic">Elegance</span>
+                </h1>
+                <p class="text-lg md:text-xl font-thin text-gray-300 mb-8">
+                    時代を超えて愛される、洗練されたデザイン。あなたの日常を輝かせます。
+                </p>
+                <a href="#" class="inline-block px-10 py-3 border border-gold text-gold uppercase text-sm tracking-widest btn-sleek">
+                    新作コレクションを見る
+                </a>
+            </div>
+        </section>
+
+        <!-- Featured Collection Grid (Day 4 Task: Clean Layout) -->
+        <section class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-light text-center mb-12 text-gold border-b border-gold/50 pb-4 tracking-wider">
+                Our Signature Collections
+            </h2>
+
+            <!-- Grid Layout: 2 Columns on Desktop, 1 Column on Mobile -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Item 1 -->
+                <div class="group overflow-hidden rounded-lg hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/600x600/1e293b/d4af37?text=Ring+Collection" 
+                         onerror="this.src='https://placehold.co/600x600/1e293b/d4af37?text=Ring+Collection';"
+                         alt="リングコレクション" 
+                         class="w-full h-64 object-cover transform transition duration-500 group-hover:scale-110">
+                    <div class="p-6 bg-gray-900">
+                        <h3 class="text-xl font-medium text-white group-hover:text-gold transition">The Constellation</h3>
+                        <p class="text-gray-400 text-sm mt-2">星々の輝きを閉じ込めた、華奢なリングシリーズ。</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="group overflow-hidden rounded-lg hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/600x600/1e293b/d4af37?text=Necklace+Collection" 
+                         onerror="this.src='https://placehold.co/600x600/1e293b/d4af37?text=Necklace+Collection';"
+                         alt="ネックレスコレクション" 
+                         class="w-full h-64 object-cover transform transition duration-500 group-hover:scale-110">
+                    <div class="p-6 bg-gray-900">
+                        <h3 class="text-xl font-medium text-white group-hover:text-gold transition">Timeless Grace</h3>
+                        <p class="text-gray-400 text-sm mt-2">日常使いに最適な、シンプルなペンダント。</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="group overflow-hidden rounded-lg hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/600x600/1e293b/d4af37?text=Earring+Collection" 
+                         onerror="this.src='https://placehold.co/600x600/1e293b/d4af37?text=Earring+Collection';"
+                         alt="ピアスコレクション" 
+                         class="w-full h-64 object-cover transform transition duration-500 group-hover:scale-110">
+                    <div class="p-6 bg-gray-900">
+                        <h3 class="text-xl font-medium text-white group-hover:text-gold transition">Celestial Drop</h3>
+                        <p class="text-gray-400 text-sm mt-2">モダンなカッティングが光るドロップピアス。</p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="group overflow-hidden rounded-lg hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://placehold.co/600x600/1e293b/d4af37?text=Bracelet+Collection" 
+                         onerror="this.src='https://placehold.co/600x600/1e293b/d4af37?text=Bracelet+Collection';"
+                         alt="ブレスレットコレクション" 
+                         class="w-full h-64 object-cover transform transition duration-500 group-hover:scale-110">
+                    <div class="p-6 bg-gray-900">
+                        <h3 class="text-xl font-medium text-white group-hover:text-gold transition">The Link</h3>
+                        <p class="text-gray-400 text-sm mt-2">手元に存在感を放つ、チェーンブレスレット。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promotional Banner Section (Day 5 Task: Banner Inspiration) -->
+        <section class="max-w-7xl mx-auto mt-16 px-4 sm:px-6 lg:px-8">
+            <div class="promo-banner p-12 md:p-16 rounded-xl text-center border-2 border-gold/50">
+                <h3 class="text-3xl md:text-4xl font-light text-white mb-3">
+                    <span class="text-gold font-serif italic">Limited Offer:</span> 20% OFF
+                </h3>
+                <p class="text-gray-300 mb-6 max-w-lg mx-auto">
+                    期間限定で、全コレクションのアイテムが20%オフ。この機会に一生もののジュエリーを手に入れてください。
+                </p>
+                <a href="#" class="inline-block px-8 py-3 bg-gold text-black uppercase text-sm tracking-widest font-bold rounded-md hover:bg-yellow-400 transition duration-300">
+                    詳細はこちら
+                </a>
+                <p class="text-xs text-gray-500 mt-4">2025年12月31日まで</p>
+            </div>
+        </section>
+
+        <!-- Concept/Story Section (Focus on Text/Minimal Image) -->
+        <section class="max-w-4xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-start md:space-x-12">
+                <div class="md:w-1/3 mb-8 md:mb-0">
+                    <i data-lucide="sparkles" class="w-12 h-12 text-gold mb-4"></i>
+                    <h2 class="text-3xl font-light tracking-wider border-b border-gold/50 pb-2">私たちの哲学</h2>
+                </div>
+                <div class="md:w-2/3">
+                    <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                        AURORAは、派手さよりも「本質的な美しさ」を追求します。すべてのジュエリーは、あなたの日常に静かに寄り添い、時間の経過と共に価値を増すようにデザインされています。素材の選定から製作まですべての工程で、地球環境への配慮と職人の技術を大切にしています。
+                    </p>
+                    <p class="text-gray-400 text-sm italic">
+                        "Elegance is not about being noticed, it's about being remembered."
+                    </p>
+                    <a href="#" class="mt-6 inline-flex items-center text-gold hover:underline">
+                        ブランドストーリーを読む <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-800 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+                
+                <!-- Nav Links -->
+                <div>
+                    <h4 class="font-bold text-gold mb-4 uppercase">Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">リング</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">ネックレス</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">ピアス</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">ブレスレット</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Info -->
+                <div>
+                    <h4 class="font-bold text-gold mb-4 uppercase">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">コンセプト</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">プレスリリース</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">採用情報</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">プライバシーポリシー</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-bold text-gold mb-4 uppercase">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">お問い合わせ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">配送・返品</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">店舗情報</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter/Social -->
+                <div>
+                    <h4 class="font-bold text-gold mb-4 uppercase">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <i data-lucide="instagram" class="w-6 h-6 text-gray-400 hover:text-gold cursor-pointer transition"></i>
+                        <i data-lucide="facebook" class="w-6 h-6 text-gray-400 hover:text-gold cursor-pointer transition"></i>
+                        <i data-lucide="twitter" class="w-6 h-6 text-gray-400 hover:text-gold cursor-pointer transition"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12 pt-8 border-t border-gray-800">
+                <p class="text-xs text-gray-500">&copy; 2025 AURORA Jewelry. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu & Lucide Icons -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+        }
+
+        mobileMenuButton.addEventListener('click', toggleMobileMenu);
+
+        // Simple script to demonstrate exponential backoff structure (not strictly needed for this menu)
+        async function fetchWithRetry(url, options = {}, retries = 3) {
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const response = await fetch(url, options);
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response;
+                } catch (error) {
+                    if (i === retries - 1) {
+                        console.error('All fetch retries failed:', error);
+                        throw error;
+                    }
+                    const delay = Math.pow(2, i) * 1000;
+                    // Exponential backoff
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                }
+            }
+        }
+    </script>
+</body>
+</html>
